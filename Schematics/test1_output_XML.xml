@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<Schematic>
+	<Components>
+		<Component height="0.7" name="RN41">
+			<Instance gate="G$1" part="U$2" rot="R270" x="-45.72" y="22.86"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-24" x2="-24" y1="8" y2="-6"/>
+				<wire layer="100" width="0.254" x1="-24" x2="2" y1="-6" y2="-6"/>
+				<wire layer="100" width="0.254" x1="2" x2="2" y1="-6" y2="8"/>
+				<wire layer="100" width="0.254" x1="2" x2="-24" y1="8" y2="8"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="TX" rot="R270" x="-3" y="12.7"/>
+				<pin gauge="0.635" length="middle" name="RX" rot="R270" x="-0.46" y="12.7"/>
+				<pin gauge="0.635" length="middle" name="VCC" rot="R90" x="-3" y="-10.7"/>
+				<pin gauge="0.635" length="middle" name="GND" rot="R90" x="-0.46" y="-10.7"/>
+			</Pins>
+		</Component>
+		<Component height="15.00" name="USB">
+			<Instance gate="G$1" part="U$3" rot="R270" x="-35.56" y="63.5"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-7.62" x2="12.7" y1="7.62" y2="7.62"/>
+				<wire layer="100" width="0.254" x1="12.7" x2="12.7" y1="7.62" y2="-3.81"/>
+				<wire layer="100" width="0.254" x1="-7.62" x2="-7.62" y1="-3.81" y2="7.62"/>
+				<wire layer="100" width="0.254" x1="-7.62" x2="12.7" y1="-3.81" y2="-3.81"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="VCC" rot="R270" x="-2.54" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="D-" rot="R270" x="0" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="D+" rot="R270" x="2.54" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="ID" rot="R270" x="5.08" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="GND" rot="R270" x="7.62" y="10.16"/>
+			</Pins>
+		</Component>
+		<Component height="15" name="LED">
+			<Instance gate="G$1" part="U$6" x="27.94" y="-30.48"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-4" x2="4" y1="3" y2="3"/>
+				<wire layer="100" width="0.254" x1="4" x2="4" y1="3" y2="-4"/>
+				<wire layer="100" width="0.254" x1="4" x2="-4" y1="-4" y2="-4"/>
+				<wire layer="100" width="0.254" x1="-4" x2="-4" y1="-4" y2="3"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="P$1" rot="R270" x="0.18" y="7.24"/>
+				<pin gauge="0.635" length="middle" name="P$2" rot="R90" x="0.18" y="-8"/>
+			</Pins>
+		</Component>
+		<Component height="25" name="LMC3V3">
+			<Instance gate="G$1" part="U$8" rot="R270" x="38.1" y="58.42"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-8" x2="3" y1="6" y2="6"/>
+				<wire layer="100" width="0.254" x1="3" x2="3" y1="6" y2="-24"/>
+				<wire layer="100" width="0.254" x1="3" x2="-8" y1="-24" y2="-24"/>
+				<wire layer="100" width="0.254" x1="-8" x2="-8" y1="-24" y2="6"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.6" length="middle" name="P$1" rot="R90" x="-6.7" y="-26.54"/>
+				<pin gauge="0.6" length="middle" name="P$2" rot="R90" x="1.78" y="-26.54"/>
+				<pin gauge="0.6" length="middle" name="P$3" rot="R90" x="-2.46" y="-26.7"/>
+			</Pins>
+		</Component>
+		<Component height="10" name="1KOHM">
+			<Instance gate="G$1" part="U$10" rot="R270" x="-35.56" y="-10.16"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-10" x2="-10" y1="2" y2="-1"/>
+				<wire layer="100" width="0.254" x1="-10" x2="10" y1="-1" y2="-1"/>
+				<wire layer="100" width="0.254" x1="10" x2="10" y1="-1" y2="2"/>
+				<wire layer="100" width="0.254" x1="10" x2="-10" y1="2" y2="2"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="P$1" x="-15.16" y="1"/>
+				<pin gauge="0.635" length="middle" name="P$2" rot="R180" x="15.16" y="1"/>
+			</Pins>
+		</Component>
+	</Components>
+	<Nets>
+		<Net name="N$2">
+			<Pin component="USB" name="VCC"/>
+			<Pin component="LMC3V3" name="P$1"/>
+		</Net>
+		<Net name="N$3">
+			<Pin component="1KOHM" name="P$1"/>
+			<Pin component="MSP430G553" name="6"/>
+		</Net>
+		<Net name="N$4">
+			<Pin component="1KOHM" name="P$1"/>
+			<Pin component="MSP430G553" name="7"/>
+		</Net>
+		<Net name="N$5">
+			<Pin component="MSP430G553" name="14"/>
+			<Pin component="1KOHM" name="P$1"/>
+		</Net>
+		<Net name="N$6">
+			<Pin component="1KOHM" name="P$1"/>
+			<Pin component="MSP430G553" name="15"/>
+		</Net>
+		<Net name="N$7">
+			<Pin component="1KOHM" name="P$2"/>
+			<Pin component="LED" name="P$1"/>
+		</Net>
+		<Net name="N$8">
+			<Pin component="1KOHM" name="P$2"/>
+			<Pin component="LED" name="P$1"/>
+		</Net>
+		<Net name="N$9">
+			<Pin component="RN41" name="RX"/>
+			<Pin component="MSP430G553" name="4"/>
+		</Net>
+		<Net name="N$10">
+			<Pin component="MSP430G553" name="3"/>
+			<Pin component="RN41" name="TX"/>
+		</Net>
+		<Net name="GND">
+			<Pin component="USB" name="GND"/>
+			<Pin component="LMC3V3" name="P$2"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="MSP430G553" name="20"/>
+			<Pin component="RN41" name="GND"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="LED" name="P$2"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="LED" name="P$2"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="LED" name="P$2"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="LED" name="P$2"/>
+		</Net>
+		<Net name="VCC">
+			<Pin component="LMC3V3" name="P$3"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="RN41" name="VCC"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="MSP430G553" name="1"/>
+		</Net>
+		<Net name="N$11">
+			<Pin component="1KOHM" name="P$2"/>
+			<Pin component="LED" name="P$1"/>
+		</Net>
+		<Net name="N$12">
+			<Pin component="1KOHM" name="P$2"/>
+			<Pin component="LED" name="P$1"/>
+		</Net>
+	</Nets>
+</Schematic>

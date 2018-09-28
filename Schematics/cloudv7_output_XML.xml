@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<Schematic>
+	<Components>
+		<Component height="15.0" name="BM240">
+			<Instance gate="G$1" part="U$6" rot="R270" x="-340.36" y="55.88"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-7.62" x2="-7.62" y1="5.08" y2="-15.24"/>
+				<wire layer="100" width="0.254" x1="-7.62" x2="5.08" y1="-15.24" y2="-15.24"/>
+				<wire layer="100" width="0.254" x1="5.08" x2="5.08" y1="-15.24" y2="5.08"/>
+				<wire layer="100" width="0.254" x1="5.08" x2="-7.62" y1="5.08" y2="5.08"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="GND" x="-12.7" y="2.54"/>
+				<pin gauge="0.635" length="middle" name="3.3V" x="-12.7" y="0"/>
+				<pin gauge="0.635" length="middle" name="SDA" x="-12.7" y="-2.54"/>
+				<pin gauge="0.635" length="middle" name="SCL" x="-12.7" y="-5.08"/>
+				<pin gauge="0.635" length="middle" name="GND1" rot="R180" x="10.16" y="2.54"/>
+				<pin gauge="0.635" length="middle" name="VCC" rot="R180" x="10.16" y="0"/>
+				<pin gauge="0.635" length="middle" name="SCK" rot="R180" x="10.16" y="-2.54"/>
+				<pin gauge="0.635" length="middle" name="SDD" rot="R180" x="10.16" y="-5.08"/>
+				<pin gauge="0.635" length="middle" name="SDI" rot="R180" x="10.16" y="-7.62"/>
+				<pin gauge="0.635" length="middle" name="CS" rot="R180" x="10.16" y="-10.16"/>
+			</Pins>
+		</Component>
+		<Component height="15.00" name="USB">
+			<Instance gate="G$1" part="U$1" rot="R270" x="-381" y="154.94"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-7.62" x2="-7.62" y1="7.62" y2="-5.08"/>
+				<wire layer="100" width="0.254" x1="-7.62" x2="12.7" y1="-5.08" y2="-5.08"/>
+				<wire layer="100" width="0.254" x1="12.7" x2="12.7" y1="-5.08" y2="7.62"/>
+				<wire layer="100" width="0.254" x1="12.7" x2="-7.62" y1="7.62" y2="7.62"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="VCC" rot="R270" x="-2.54" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="D-" rot="R270" x="0" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="D+" rot="R270" x="2.54" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="ID" rot="R270" x="5.08" y="10.16"/>
+				<pin gauge="0.635" length="middle" name="GND" rot="R270" x="7.62" y="10.16"/>
+			</Pins>
+		</Component>
+		<Component height="15.00" name="CHARGE">
+			<Instance gate="G$1" part="U$2" rot="R90" x="-297.18" y="144.78"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-10.16" x2="-10.16" y1="5.08" y2="-15.24"/>
+				<wire layer="100" width="0.254" x1="-10.16" x2="10.16" y1="-15.24" y2="-15.24"/>
+				<wire layer="100" width="0.254" x1="10.16" x2="10.16" y1="-15.24" y2="5.08"/>
+				<wire layer="100" width="0.254" x1="10.16" x2="-10.16" y1="5.08" y2="5.08"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="VCC" rot="R270" x="-5.08" y="7.62"/>
+				<pin gauge="0.635" length="middle" name="GND" rot="R270" x="-2.54" y="7.62"/>
+				<pin gauge="0.635" length="middle" name="BGND" rot="R270" x="0" y="7.62"/>
+				<pin gauge="0.635" length="middle" name="VBAT" rot="R270" x="2.54" y="7.62"/>
+			</Pins>
+		</Component>
+		<Component height="10" name="BATTERY">
+			<Instance gate="G$1" part="U$4" rot="R90" x="-307.34" y="175.26"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="30.48" x2="0" y1="20.32" y2="20.32"/>
+				<wire layer="100" width="0.254" x1="0" x2="0" y1="20.32" y2="0"/>
+				<wire layer="100" width="0.254" x1="0" x2="30.48" y1="0" y2="0"/>
+				<wire layer="100" width="0.254" x1="30.48" x2="30.48" y1="0" y2="20.32"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="GND" x="-2.54" y="12.7"/>
+				<pin gauge="0.635" length="middle" name="VCC" x="-2.54" y="7.62"/>
+			</Pins>
+		</Component>
+		<Component height="10.0" name="LED">
+			<Instance gate="G$1" part="U$8" x="-411.48" y="93.98"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-5.08" x2="-5.08" y1="12.7" y2="0"/>
+				<wire layer="100" width="0.254" x1="-5.08" x2="5.08" y1="0" y2="0"/>
+				<wire layer="100" width="0.254" x1="5.08" x2="5.08" y1="0" y2="12.7"/>
+				<wire layer="100" width="0.254" x1="5.08" x2="-5.08" y1="12.7" y2="12.7"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="P$1" rot="R270" x="0" y="15.24"/>
+				<pin gauge="0.635" length="middle" name="P$2" rot="R90" x="0" y="-2.54"/>
+			</Pins>
+		</Component>
+		<Component height="10" name="1KOHM">
+			<Instance gate="G$1" part="U$5" x="-330.2" y="134.62"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="0" x2="0" y1="2.54" y2="0"/>
+				<wire layer="100" width="0.254" x1="0" x2="7.62" y1="0" y2="0"/>
+				<wire layer="100" width="0.254" x1="7.62" x2="7.62" y1="0" y2="2.54"/>
+				<wire layer="100" width="0.254" x1="7.62" x2="0" y1="2.54" y2="2.54"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="P$1" x="-2.54" y="0"/>
+				<pin gauge="0.635" length="middle" name="P$2" rot="R180" x="12.7" y="2.54"/>
+			</Pins>
+		</Component>
+		<Component height="0.7" name="RN41">
+			<Instance gate="G$1" part="U$7" rot="R270" x="-441.96" y="119.38"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-22.86" x2="-22.86" y1="7.62" y2="-7.62"/>
+				<wire layer="100" width="0.254" x1="-22.86" x2="5.08" y1="-7.62" y2="-7.62"/>
+				<wire layer="100" width="0.254" x1="5.08" x2="5.08" y1="-7.62" y2="7.62"/>
+				<wire layer="100" width="0.254" x1="5.08" x2="-22.86" y1="7.62" y2="7.62"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.635" length="middle" name="TX" rot="R270" x="0" y="12.7"/>
+				<pin gauge="0.635" length="middle" name="RX" rot="R270" x="2.54" y="12.7"/>
+				<pin gauge="0.635" length="middle" name="VCC" rot="R90" x="0" y="-12.7"/>
+				<pin gauge="0.635" length="middle" name="GND" rot="R90" x="2.54" y="-12.7"/>
+			</Pins>
+		</Component>
+		<Component height="20" name="MSP430G553">
+			<Instance gate="G$1" part="U$3" x="-375.92" y="116.84"/>
+			<Perimeter>
+				<wire layer="100" width="0.254" x1="-19.05" x2="17.78" y1="12.7" y2="12.7"/>
+				<wire layer="100" width="0.254" x1="17.78" x2="17.78" y1="12.7" y2="-17.78"/>
+				<wire layer="100" width="0.254" x1="17.78" x2="-19.05" y1="-17.78" y2="-17.78"/>
+				<wire layer="100" width="0.254" x1="-19.05" x2="-19.05" y1="-17.78" y2="12.7"/>
+			</Perimeter>
+			<Pins>
+				<pin gauge="0.8128" length="middle" name="1" visible="pad" x="-24.13" y="7.62"/>
+				<pin gauge="0.8128" length="middle" name="2" visible="pad" x="-24.13" y="5.08"/>
+				<pin gauge="0.8128" length="middle" name="3" visible="pad" x="-24.13" y="2.54"/>
+				<pin gauge="0.8128" length="middle" name="4" visible="pad" x="-24.13" y="0"/>
+				<pin gauge="0.8128" length="middle" name="5" visible="pad" x="-24.13" y="-2.54"/>
+				<pin gauge="0.8128" length="middle" name="6" visible="pad" x="-24.13" y="-5.08"/>
+				<pin gauge="0.8128" length="middle" name="7" visible="pad" x="-24.13" y="-7.62"/>
+				<pin gauge="0.8128" length="middle" name="14" rot="R180" visible="pad" x="22.86" y="-7.62"/>
+				<pin gauge="0.8128" length="middle" name="15" rot="R180" visible="pad" x="22.86" y="-5.08"/>
+				<pin gauge="0.8128" length="middle" name="16" rot="R180" visible="pad" x="22.86" y="-2.54"/>
+				<pin gauge="0.8128" length="middle" name="17" rot="R180" visible="pad" x="22.86" y="0"/>
+				<pin gauge="0.8128" length="middle" name="18" rot="R180" visible="pad" x="22.86" y="2.54"/>
+				<pin gauge="0.8128" length="middle" name="19" rot="R180" visible="pad" x="22.86" y="5.08"/>
+				<pin gauge="0.8128" length="middle" name="20" rot="R180" visible="pad" x="22.86" y="7.62"/>
+				<pin gauge="0.8128" length="middle" name="8" visible="pad" x="-24.13" y="-10.16"/>
+				<pin gauge="0.8128" length="middle" name="9" visible="pad" x="-24.13" y="-12.7"/>
+				<pin gauge="0.8128" length="middle" name="10" visible="pad" x="-24.13" y="-15.24"/>
+				<pin gauge="0.8128" length="middle" name="13" rot="R180" visible="pad" x="22.86" y="-10.16"/>
+				<pin gauge="0.8128" length="middle" name="12" rot="R180" visible="pad" x="22.86" y="-12.7"/>
+				<pin gauge="0.8128" length="middle" name="11" rot="R180" visible="pad" x="22.86" y="-15.24"/>
+			</Pins>
+		</Component>
+	</Components>
+	<Nets>
+		<Net name="N$2">
+			<Pin component="USB" name="D-"/>
+			<Pin component="1KOHM" name="P$1"/>
+			<Pin component="MSP430G553" name="16"/>
+		</Net>
+		<Net name="N$3">
+			<Pin component="BM240" name="SDA"/>
+			<Pin component="MSP430G553" name="15"/>
+		</Net>
+		<Net name="N$4">
+			<Pin component="BM240" name="SCL"/>
+			<Pin component="MSP430G553" name="14"/>
+		</Net>
+		<Net name="N$7">
+			<Pin component="USB" name="VCC"/>
+			<Pin component="CHARGE" name="VCC"/>
+		</Net>
+		<Net name="GND">
+			<Pin component="GND" name="GND"/>
+			<Pin component="USB" name="GND"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="CHARGE" name="GND"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="BM240" name="GND"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="MSP430G553" name="20"/>
+			<Pin component="GND" name="GND"/>
+			<Pin component="LED" name="P$2"/>
+		</Net>
+		<Net name="N$9">
+			<Pin component="CHARGE" name="BGND"/>
+			<Pin component="BATTERY" name="GND"/>
+		</Net>
+		<Net name="VCC">
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="CHARGE" name="VBAT"/>
+			<Pin component="BATTERY" name="VCC"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="BM240" name="3.3V"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="MSP430G553" name="1"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="1KOHM" name="P$2"/>
+			<Pin component="VCC" name="VCC"/>
+			<Pin component="RN41" name="VCC"/>
+		</Net>
+		<Net name="N$10">
+			<Pin component="LED" name="P$1"/>
+			<Pin component="MSP430G553" name="6"/>
+		</Net>
+		<Net name="N$8">
+			<Pin component="USB" name="D+"/>
+			<Pin component="MSP430G553" name="17"/>
+		</Net>
+		<Net name="N$1">
+			<Pin component="RN41" name="TX"/>
+			<Pin component="MSP430G553" name="3"/>
+		</Net>
+		<Net name="N$5">
+			<Pin component="RN41" name="RX"/>
+			<Pin component="MSP430G553" name="4"/>
+		</Net>
+	</Nets>
+</Schematic>
