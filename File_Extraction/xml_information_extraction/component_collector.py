@@ -19,7 +19,7 @@ def run(directory, filename):
     
     for component in e.iter('Component'):
         component_name = component.get('name')
-        heigth = component.get('height')
+        height  = component.get('height')
         
         Instance = component[0]
         Perimeter = component[1]
@@ -52,7 +52,7 @@ def run(directory, filename):
                           'rot': pin_rot, 'length': pin_length, 'component': component_name}
             
             
-        components[component_name] = {'heigth': heigth, 'crosshair': crosshair, 'cnt': cnt_value, 'rot': component_rot,
+        components[component_name] = {'height ': height , 'crosshair': crosshair, 'cnt': cnt_value, 'rot': component_rot,
                   'coordinates': component_coordinates, 'pins': component_pins} 
         
     '''   
@@ -60,7 +60,7 @@ def run(directory, filename):
         print(" ")
         print("###################################")
         print("Component name: " + name_component)
-        print("     Heigth: " + str(component_characteristic["heigth"]))
+        print("     height : " + str(component_characteristic["height "]))
         print("     CrossHair: " + str(component_characteristic["crosshair"]))  
         print("     CNT: " + str(component_characteristic["cnt"]))  
         print("     Rot: " + str(component_characteristic["rot"]))
