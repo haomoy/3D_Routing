@@ -3,7 +3,7 @@
 
 import adsk.core, adsk.fusion, adsk.cam, traceback
 from .File_Extraction import file_browser as Browse         
-#from .UTEPGuiModules import Reference1 as R       
+from .Reference_Geometry import regular_reference as R       
 #from .UTEPGuiModules import ComponentList as CL   
 handlers = []
 global selectedFiles
@@ -18,7 +18,7 @@ selectedPlanes = []
 app = None
 ui  = None
 commandId = 'CommandInputGallery'
-commandName = 'UTEP Fusion 360 GUI'
+commandName = 'UTEP Embedding Gui'                         
 commandDescription = 'Demo command input examples.'
 rowNumber = 0
 
@@ -67,10 +67,11 @@ If unsure of what this means you can press it, it will not interfere or modify y
                 buttonClicked = ""
         
             if cmdInput.id == '_browse':
-                temp = B.run(contextt)
+                temp = Browse.run(contextt)
                 files = temp[0]
                 
-                for j in range(0, len(files)):#for every selected file, get the file name and append it to list
+                #for every selected file, get the file name and append it to list
+                for j in range(0, len(files)):
                     tempName = files[j]
                     indexOfLastSlash = 0
                     for i in range(0, len(tempName)):
@@ -150,7 +151,14 @@ class CommandExecuteHandler(adsk.core.CommandEventHandler):
                 command = args.firingEvent.sender
                 if buttonClicked == '_browse':
                     #ui.messageBox("inside if browse statement")
+                    
+                    '''
+                    #################################################################################################
+                    REPLACE WITH YOUR COMPONENT LIST FILE
                     CL.run(contextt, selectedFiles, directories)
+                    #################################################################################################
+                    '''
+                    
                     #COWS.run(contextt, inputss, selectedFiles)
                 if buttonClicked == "_reference":
                     R.CreateReference2()
