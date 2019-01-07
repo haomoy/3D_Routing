@@ -3,7 +3,8 @@
 
 import adsk.core, adsk.fusion, adsk.cam, traceback
 from .File_Extraction import file_browser as Browse         
-from .Reference_Geometry import regular_reference as R       
+from .Reference_Geometry import regular_reference as Reference   
+from .Mapping import map_generator as Mapping    
 #from .UTEPGuiModules import ComponentList as CL   
 handlers = []
 global selectedFiles
@@ -62,10 +63,10 @@ If unsure of what this means you can press it, it will not interfere or modify y
 ''')
                 
             if cmdInput.id == '_reference':
-                buttonClicked = "_reference"
+                buttonClicked = '_reference'
                 action = cmd.doExecute(False)
                 buttonClicked = ""
-        
+
             if cmdInput.id == '_browse':
                 temp = Browse.run(contextt)
                 files = temp[0]
@@ -83,7 +84,17 @@ If unsure of what this means you can press it, it will not interfere or modify y
                 buttonClicked = '_browse'
                 action = cmd.doExecute(False)
                 buttonClicked = ""
-            
+                
+            '''
+            #############################
+            Temporal button to display bounding box
+            #############################
+            '''
+            if cmdInput.id == '_map':
+                Mapping.run(contextt)
+                buttonClicked = '_map'
+                buttonClicked = ""
+                
         except:
             if ui:
                 ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))	
@@ -120,12 +131,21 @@ class MyCommandCreatedHandler(adsk.core.CommandCreatedEventHandler):
             tab1ChildInputs = tabCmdInput1.children
             
             
-            #help
+            # Help
             tab1ChildInputs.addBoolValueInput('_help', 'Help', False, '', True)
-            # Create bool value input with button style
+            # Create bool value input with button style to browse
             tab1ChildInputs.addBoolValueInput('_browse', 'Browse', False, '', True)
-            # Create bool value input with button style # reference
+            # Create bool value input with button style for reference
             tab1ChildInputs.addBoolValueInput('_reference', 'Create Reference', False, '', True)
+            
+            '''
+            #############################
+            Temporal button to display bounding box
+            #############################
+            '''
+            # Create bool value input with button style for temporal 
+            tab1ChildInputs.addBoolValueInput('_map', 'Create Bounding Box', False, '', True)
+            
             
                         
             # Connect to the execute event.
@@ -161,7 +181,7 @@ class CommandExecuteHandler(adsk.core.CommandEventHandler):
                     
                     #COWS.run(contextt, inputss, selectedFiles)
                 if buttonClicked == "_reference":
-                    R.CreateReference2()
+                    Reference.CreateReference2()
                 #if buttonClicked == "_place":
                 #    P.PlaceComponents(contextt, )
                 
