@@ -71,9 +71,12 @@ def run(context):
         maxXZminY = adsk.core.Point3D.create(bndBox.maxPoint.x, bndBox.minPoint.y, bndBox.maxPoint.z)
         maxXminYZ = adsk.core.Point3D.create(bndBox.maxPoint.x, bndBox.minPoint.y, bndBox.minPoint.z)
         
-        ui.messageBox('X max-min ' + bndBox.minPoint.x + '-' + bndBox.maxPoint.x)
-        ui.messageBox('Y max-min ' + bndBox.minPoint.y + '-' + bndBox.maxPoint.y)
-        ui.messageBox('Z max-min ' + bndBox.minPoint.z + '-' + bndBox.maxPoint.z)
+        '''
+        Message to debug/ understand minimum and maximum points 
+        '''
+        ui.messageBox('X max-min ' + str(bndBox.minPoint.x) + '-' + str(bndBox.maxPoint.x))
+        ui.messageBox('Y max-min ' + str(bndBox.minPoint.y) + '-' + str(bndBox.maxPoint.y))
+        ui.messageBox('Z max-min ' + str(bndBox.minPoint.z) + '-' + str(bndBox.maxPoint.z))
         
         lines.addByTwoPoints(minXYZ, minXYmaxZ)
         lines.addByTwoPoints(minXYZ, minXZmaxY)
