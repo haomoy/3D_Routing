@@ -1,0 +1,63 @@
+**INSTRUCTIONS ON HOW TO CREATE AN EAGLE SCHEMATIC FILE THAT HAS ALL THE REQUIRED PROPERTIES FOR THE FUSION 360 GUI **
+
+USING A PRE-EXISTING EAGLE LIBRARY:
+In order to use a pre-existing library, such as Texas Instruments library, do the following steps to ensure the creation of a proper schematic.
+1.) Select FILE, and under NEW, select "Library".
+2.) You will see 3 columns, Device, Package and Symbol. Click on "Add Device...".
+3.) In the window that opens up, click on "Import..."
+4.) In the "Import Device" window, select the library that you want to use and click on "Ok"
+5.) A new window will be created. Click on the "Table of Contents" button that looks like an open book, right below "View".
+6.) You will be back in the 3 columns window but now the columns will be filled.
+7.) So from here, basically what you're going to do is, for each Package, you will make a Device and a Symbol corresponding to that Package.
+8.) So, what you do is, right click on any device already in the Device column and select "Duplicate" and give it 
+a name corresponding to one of the Packages not already mentioned in the Device column.
+9.) Repeat Step 8 for the Symbol column.
+
+ie.
+| Device  |   Package   |   Symbol    |
+   VG32         VG32         VG32
+                VG32B         
+                VG32K        
+                VG32BK         
+                VG32P         
+
+Should become:
+ | Device  |   Package   |   Symbol    |
+    VG32         VG32         VG32
+    VG32B        VG32B        VG32B
+    VG32K        VG32K        VG32K
+    VG32BK       VG32BK       VG32BK
+    VG32P        VG32P        VG32P
+
+10.) Once step 8 and 9 are done, double-click the first device. You will see a list of packages on the right side.
+11.) For each of those packages, right-click the ones that don't belong and select "Delete".
+ie. for device VG32, you will see 5 packages, VG32, VG32B...etc. but the only one that belongs is VG32.
+    for device VG32BK, the only package that belongs to it is VG32BK.
+
+12.) Now, for the package inside each Device, select it, and click on the blue "Attributes" in the bottom of the window. Click on "New".
+Then, enter "HEIGHT" in "name" row and the value for the height of the component in the "value" row. Then, click on "Ok" and then on "Ok" again.
+Also right click on the package inside of each Device, select "Rename" and provide the same name as the Device it belongs to.
+13.) Once all the packages have a height value, click on the Save button and give it a name. This doesn't have to be the same as the Device/Package/Symbol name.
+
+14.) Now, Click on the "Table of Contents" button that looks like an open book, right below "View" again.
+For EACH PACKAGE in the Package column, do the following:
+  a.) double click it, to open it.
+  b.) Click on "Layer Settings" button in toolbar. Looks like 3 colored squares on top of each other.
+  c.) In the "Layer Settings" window, click on the "+"(plus) sign, enter "Perimeter" in the "name" field and 
+select any bright color you like. The layer number doesn't matter, it can be left as whatever default value it has.
+  d.) Once that is done, click on "Ok" and "Ok" again to close both windows.
+  e.) Select the "Draw lines" button and then select "Perimeter" layer.
+  f.) Draw a line along the top most edge, from the TOP LEFT corner to the BOTTOM LEFT corner and then click on the red "X".
+  g.) Repeat steps e and f in COUNTER-CLOCKWISE direction until all the edges of the component are drawn with the Perimeter layer.
+  Make sure to draw line by line, otherwise the Fusion 360 software won't pick the shape up.
+  h.) Click on the Save button.
+ 
+15.) Click on Save once back in the "Table of Contents" window to save the library. Close the window when done.
+16.) Back in Eagle, create a new Schematic file.
+17.) In the new Schematic file, select the "Add a part". In the new window, click on "Manage Libraries", then on "Browse" and select your custom library.
+Close the "Manage libraries" window.
+18.) Back in the "Add a part" window, scroll down to your library, expand it and select the desired device and click on "Ok".
+19.) Place your device wherever you want and once you're done, click on the red "X".
+Repeat for other devices you want added on your schematic file.
+20.) To connect the pins/leads of each component, select the "Draw an electrical connection" button and connect the desired pins/leads.
+21.) Once that is done, save the schematic file and you're done.
