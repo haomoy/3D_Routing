@@ -4,9 +4,10 @@
 import adsk.core, adsk.fusion, adsk.cam, traceback
 from .File_Extraction import file_browser as Browse         
 from .Reference_Geometry import regular_reference as Reference   
-from .Mapping import map_generator as Mapping    
-#from .UTEPGuiModules import ComponentList as CL   
-handlers = []
+from .Tests import extrusion as current_test   #DELETE EVENTUALLY
+from . import Components_Manipulation as CM   
+
+handlers = [] 
 global selectedFiles
 selectedFiles = []
 global directories
@@ -90,9 +91,9 @@ If unsure of what this means you can press it, it will not interfere or modify y
             Temporal button to display bounding box
             #############################
             '''
-            if cmdInput.id == '_map':
-                Mapping.run(contextt)
-                buttonClicked = '_map'
+            if cmdInput.id == '_help':
+                current_test.run(contextt)
+                buttonClicked = '_help'
                 buttonClicked = ""
                 
         except:
@@ -144,7 +145,7 @@ class MyCommandCreatedHandler(adsk.core.CommandCreatedEventHandler):
             #############################
             '''
             # Create bool value input with button style for temporal 
-            tab1ChildInputs.addBoolValueInput('_map', 'Create Bounding Box', False, '', True)
+            tab1ChildInputs.addBoolValueInput('_test', 'Test', False, '', True)
             
             
                         
@@ -167,10 +168,10 @@ class CommandExecuteHandler(adsk.core.CommandEventHandler):
             try:
                 app = adsk.core.Application.get()
                 ui = app.userInterface
-                #ui.messageBox("inside execute handler")
+                ui.messageBox("inside execute handler")
                 command = args.firingEvent.sender
                 if buttonClicked == '_browse':
-                    #ui.messageBox("inside if browse statement")
+                    ui.messageBox("inside if browse statement")
                     
                     '''
                     #################################################################################################
@@ -194,7 +195,7 @@ def run(context):
     try:
         global app
         app = adsk.core.Application.get()
-        global ui
+        global ui 
         ui = app.userInterface
         global contextt
         contextt = context
