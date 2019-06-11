@@ -8,9 +8,7 @@ def CreateReference2():
     app = adsk.core.Application.get()
     ui = app.userInterface
     ##ui.messageBox("Inside Create Reference 2!!!")
-    global temp
-    global lastx
-    global lasty
+    
     product = app.activeProduct
     design = adsk.fusion.Design.cast(product)
     newComp = adsk.fusion.Component.cast(design.rootComponent)

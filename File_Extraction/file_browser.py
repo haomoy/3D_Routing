@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
 """
-Created on Thu Sep 13 15:28:23 2018
-
 @author: htmoy
 """
 
@@ -22,7 +19,7 @@ def run(context):
         fileDialog.title = "Select .sch file"
         fileDialog.filter = 'Jason files (*.sch)'
         fileDialog.filterIndex = 0
-        dirName = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))#"C:\\Users\\jmper\\AppData\\Roaming\\Autodesk\\Autodesk Fusion 360\\API\\Scripts"
+        dirName = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
         
         fileDialog.initialDirectory = dirName
         fileDialog.showOpen()
@@ -41,5 +38,6 @@ def run(context):
             OSP.run(directory, fileName)
             
         return selectedFiles
+        
     except ValueError:
         print("Parser script did not run...")

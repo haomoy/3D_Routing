@@ -2,6 +2,11 @@ import adsk.core, adsk.fusion, adsk.cam, traceback
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
 
+'''
+This portion extracts the necessary information from the selected schematic through its XML file and creates a 
+new XML file containing only the extracted information from the XML for debugging purposes.   
+
+'''
 def run(directory, filename):
     try:
         app = adsk.core.Application.get()
@@ -40,7 +45,7 @@ def run(directory, filename):
 
         '''
         DEBUG, DELETE EVENTUALLY
-        '''
+        
         display = " " 
         for k,v in part_dict_inv.items(): 
             display = display + "\n" + str(k) + ": " + str(v)
@@ -53,10 +58,11 @@ def run(directory, filename):
                 for attribute in deviceset.iter('attribute'):
                     if attribute.get('name'):
                         height_dict[name] = attribute.get('value')
+        '''
         
         '''
         DEBUG, DELETE EVENTUALLY
-        '''
+        
         display = " " 
         for k,v in height_dict.items(): 
             display = display + "\n" + str(k) + ": " + str(v)
@@ -68,6 +74,8 @@ def run(directory, filename):
         root_out = ET.Element('Schematic')
 
         components_out = ET.SubElement(root_out, 'Components')
+        '''
+
         '''
         make list of symbols
         '''
@@ -83,11 +91,12 @@ def run(directory, filename):
 
         '''
         DEBUG, DELETE EVENTUALLY
-        '''
+        
         display = " " 
         for k in symbols: 
             display = display + "\n" + str(k)
         ui.messageBox("Sybmols \n " + str(display))
+        '''
 
         '''
         Collect Pin wire gauges
@@ -110,11 +119,12 @@ def run(directory, filename):
         
         '''
         DEBUG, DELETE EVENTUALLY
-        '''
+        
         display = " " 
         for k,v in parts_wire.items(): 
             display = display + "\n" + str(k) + ": " + str(v)
         ui.messageBox("Parts Wire \n " + str(display))
+        '''
         
         #Pin names retrieved from pacakge portion must be translated using device portion
         parts_wire_ref = {}
@@ -129,11 +139,12 @@ def run(directory, filename):
             
         '''
         DEBUG, DELETE EVENTUALLY
-        '''
+        
         display = " " 
         for k,v in parts_wire_ref.items(): 
             display = display + "\n" + str(k) + ": " + str(v)
         ui.messageBox("Parts Wire Ref \n " + str(display))
+        '''
             
         '''
         Compile Pin information for each component
